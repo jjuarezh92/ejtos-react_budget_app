@@ -1,22 +1,20 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
-const Reamining = () => {
-    const { expenses, budget } = useContext(AppContext);
+const Remaining = () => {
+    const { expenses, budget, currency } = useContext(AppContext);
 
     const totalExpenses = expenses.reduce((total, item) => {
         return (total = total + item.cost);
-    },0);
+    }, 0);
 
-    const alertType =  totalExpenses > budget ? 'alert-danger' : 'alert-success';
+    const alertType = totalExpenses > budget ? 'alert-danger' : 'alert-success';
 
     return (
         <div className={`alert ${alertType}`}>
-            <span>Remaining: ${budget - totalExpense}</span>
+            <span>Remaining: {currency}{budget - totalExpenses}</span>
         </div>
     );
-
 };
 
-
-export default Reamining;
+export default Remaining;
