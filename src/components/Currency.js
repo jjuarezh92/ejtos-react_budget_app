@@ -10,6 +10,7 @@ const Currency = () => {
         dispatch({
             type: 'CHG_CURRENCY',
             payload: value,
+            
         });
     }
 
